@@ -2,7 +2,6 @@
 
 ![Dexhand Demo](dexhand_demo.jpeg)
 
-![Dexhand Gazebo Simulation](dexhand_demo_gazebo.jpeg)
 
 *Dexhand simulation and demonstration in Gazebo physics environment*
 
