@@ -1,8 +1,10 @@
 # ROS 2 Dexhand Control
 
-![Dexhand Gazebo Simulation](dexhand_demo.jpeg)
+![Dexhand Demo](dexhand_demo.jpeg)
 
-*Dexhand running in Gazebo physics simulation environment*
+![Dexhand Gazebo Simulation](dexhand_demo_gazebo.jpeg)
+
+*Dexhand simulation and demonstration in Gazebo physics environment*
 
 ## Overview
 
