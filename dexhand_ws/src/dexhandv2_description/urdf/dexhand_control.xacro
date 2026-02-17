@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="dexhandv2_cobot_right" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <ros2_control name="IgnitionSystem" type="system">
+    <hardware>
+      <plugin>ign_ros2_control/IgnitionSystem</plugin>
+    </hardware>
+
+    <xacro:macro name="finger_joint" params="name">
+      <joint name="${name}">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">2.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+    </xacro:macro>
+
+    <xacro:finger_joint name="R_Index_Flexor"/>
+    <xacro:finger_joint name="R_Middle_Flexor"/>
+    <xacro:finger_joint name="R_Ring_Flexor"/>
+    <xacro:finger_joint name="R_Pinky_Flexor"/>
+    <xacro:finger_joint name="R_Thumb_Flexor"/>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+      <parameters>$(find dexhandv2_description)/config/dexhand_controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+</robot>

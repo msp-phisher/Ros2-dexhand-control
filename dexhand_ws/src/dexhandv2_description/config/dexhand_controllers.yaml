@@ -1,0 +1,20 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: True
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    hand_controller:
+      type: position_controllers/JointGroupPositionController
+
+hand_controller:
+  ros__parameters:
+    joints:
+      - R_Index_Flexor
+      - R_Middle_Flexor
+      - R_Ring_Flexor
+      - R_Pinky_Flexor
+      - R_Thumb_Flexor
+    interface_name: position

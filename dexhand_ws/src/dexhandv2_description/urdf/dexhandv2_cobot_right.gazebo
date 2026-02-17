@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<robot name="dexhandv2_cobot_right" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin
+    filename="ignition-gazebo-joint-state-publisher-system"
+    name="ignition::gazebo::systems::JointStatePublisher">
+  </plugin>
+
+  <plugin
+    filename="ignition-gazebo-joint-controller-system"
+    name="ignition::gazebo::systems::JointController">
+    <joint_name>R_Index_Flexor</joint_name>
+    <joint_name>R_Middle_Flexor</joint_name>
+    <joint_name>R_Ring_Flexor</joint_name>
+    <joint_name>R_Pinky_Flexor</joint_name>
+    <joint_name>R_Thumb_Flexor</joint_name>
+    <joint_name>R_Index_Pitch</joint_name>
+    <joint_name>R_Middle_Pitch</joint_name>
+    <joint_name>R_Ring_Pitch</joint_name>
+    <joint_name>R_Pinky_Pitch</joint_name>
+    <joint_name>R_Thumb_Yaw</joint_name>
+    <joint_name>R_Thumb_Roll</joint_name>
+    <joint_name>R_Thumb_Pitch</joint_name>
+    <joint_name>R_Index_Yaw</joint_name>
+    <joint_name>R_Middle_Yaw</joint_name>
+    <joint_name>R_Ring_Yaw</joint_name>
+    <joint_name>R_Pinky_Yaw</joint_name>
+  </plugin>
+</gazebo>
+
+<xacro:macro name="hand_geometry" params="reference">
+  <gazebo reference="${reference}">
+    <visual>
+      <material>
+        <ambient>0.5 0.5 0.5 1</ambient>
+        <diffuse>0.7 0.7 0.7 1</diffuse>
+        <specular>0.8 0.8 0.8 1</specular>
+      </material>
+    </visual>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <self_collide>true</self_collide>
+    <allow_auto_inertia_calculation>true</allow_auto_inertia_calculation>
+  </gazebo>
+</xacro:macro>
+
+<xacro:hand_geometry reference="base_link"/>
+<xacro:hand_geometry reference="Index_Knuckle_1"/>
+<xacro:hand_geometry reference="Middle_Knuckle_1"/>
+<xacro:hand_geometry reference="Ring_Knuckle_1"/>
+<xacro:hand_geometry reference="Pinky_Knuckle_1"/>
+<xacro:hand_geometry reference="Index_Middle_1"/>
+<xacro:hand_geometry reference="Middle_Middle_1"/>
+<xacro:hand_geometry reference="Ring_Middle_1"/>
+<xacro:hand_geometry reference="Pinky_Middle_1"/>
+<xacro:hand_geometry reference="Index_Tip_1"/>
+<xacro:hand_geometry reference="Midle_Tip_1"/>
+<xacro:hand_geometry reference="Ring_Tip_1"/>
+<xacro:hand_geometry reference="Pinky_Tip_1"/>
+<xacro:hand_geometry reference="Thumb_Prox_KC_1"/>
+<xacro:hand_geometry reference="Thumb_Dist_KC_1"/>
+<xacro:hand_geometry reference="Thumb_Middle_1"/>
+<xacro:hand_geometry reference="Thumb_Tip_1"/>
+<xacro:hand_geometry reference="Index_Knuckle_Cross_1"/>
+<xacro:hand_geometry reference="Middle_Knuckle_Cross_1"/>
+<xacro:hand_geometry reference="Ring_Knuckle_Cross_1"/>
+<xacro:hand_geometry reference="Pinky_Knuckle_Cross_1"/>
+<xacro:hand_geometry reference="Thumb_Knuckle_1"/>
+<xacro:hand_geometry reference="Solid_Wrist_1"/>
+<xacro:hand_geometry reference="Palm_1"/>
+<xacro:hand_geometry reference="Cobot_Forearm_1"/>
+
+</robot>
